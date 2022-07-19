@@ -1,4 +1,4 @@
-import { ConcreteEntry } from './PriceList'
+import { ConcreteEntry } from 'src/consts'
 
 import styles from './PriceList.module.css'
 
