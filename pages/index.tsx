@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ДОСТАВКА БЕТОНА - ООО "МИРДИН"</title>
+        <title>ДОСТАВКА БЕТОНА - ООО &quot;МИРДИН&quot;</title>
       </Head>
       <Layout>
         <Script
