@@ -36,7 +36,6 @@ export default function useOrderConcreteForm() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(e)
   }
 
   useEffect(() => {

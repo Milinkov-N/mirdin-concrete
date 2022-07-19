@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { IoMdClose } from 'react-icons/io'
 import { PhoneNumbers, Button, Email, Modal } from 'src/components'
+import { scrollUp } from 'src/utils'
 
 import styles from './NavModal.module.css'
 
@@ -9,22 +11,35 @@ interface NavModalProps {
 }
 
 export default function NavModal({ show, onClose }: NavModalProps) {
+  const handleScrollUp = () => {
+    scrollUp()
+    onClose()
+  }
+
   return (
     <Modal show={show} onClose={onClose}>
       <div className={styles.modal}>
         <nav className={styles.nav}>
           <ul>
             <li className={styles.listItem}>
-              <a href='/'>Главная</a>
+              <Link href=''>
+                <a onClick={handleScrollUp}>Главная</a>
+              </Link>
             </li>
             <li className={styles.listItem}>
-              <a href='/'>О нас</a>
+              <Link href='#about'>
+                <a onClick={onClose}>О нас</a>
+              </Link>
             </li>
             <li className={styles.listItem}>
-              <a href='/'>Цены</a>
+              <Link href='#services'>
+                <a onClick={onClose}>Услуги</a>
+              </Link>
             </li>
             <li className={styles.listItem}>
-              <a href='/'>Контакты</a>
+              <Link href='#price-list'>
+                <a onClick={onClose}>Цены</a>
+              </Link>
             </li>
           </ul>
         </nav>

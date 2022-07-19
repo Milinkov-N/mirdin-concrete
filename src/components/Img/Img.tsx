@@ -37,7 +37,7 @@ export default function Img({
       aspectRatio={aspectRatio}
       style={style}
     >
-      <Image src={src} objectFit='contain' layout='fill' {...rest} />
+      <Image src={src} objectFit='contain' layout='fill' alt='' {...rest} />
     </ImgWrapper>
   )
 }

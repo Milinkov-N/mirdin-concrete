@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import classNames from 'src/utils'
 
 interface LogoProps {
@@ -9,8 +10,8 @@ export default function Logo({ className = '', color = 'inherit' }: LogoProps) {
   const logoClasses = classNames('logo', [`clr-${color}`, className])
 
   return (
-    <a href='/' className={logoClasses}>
-      ооо "мирдин"
-    </a>
+    <Link href='/'>
+      <a className={logoClasses}>ооо "мирдин"</a>
+    </Link>
   )
 }
