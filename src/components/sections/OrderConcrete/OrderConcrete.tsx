@@ -1,3 +1,4 @@
+import { PageSectionProps } from 'src/types'
 import { Button, Input } from 'src/components'
 import { Select } from 'src/components/Input/Input'
 import { Section } from 'src/components/layout'
@@ -6,11 +7,11 @@ import { useOrderConcreteForm } from 'src/hooks/'
 
 import styles from './OrderConcrete.module.css'
 
-export default function OrderConcrete() {
+export default function OrderConcrete({ anchor }: PageSectionProps) {
   const { summary, state, handlers } = useOrderConcreteForm()
 
   return (
-    <Section title='Заказать бетон' alter>
+    <Section title='Заказать бетон' id={anchor} alter>
       <div className={styles.wrapper}>
         <div className={styles.description}>
           <p>
@@ -38,22 +39,31 @@ export default function OrderConcrete() {
             method='POST'
           >
             <Input
+              wrapperClassName={styles.hiddenInput}
               type='hidden'
               name='_cc'
               value='milinkov.nik@gmail.com'
               label=''
             />
             <Input
+              wrapperClassName={styles.hiddenInput}
               type='hidden'
               name='_subject'
               value='Новый заказ доставки бетона на сайте concrete-mirdin.ru'
               label=''
             />
-            <Input type='hidden' name='summary' value={summary} label='' />
+            <Input
+              wrapperClassName={styles.hiddenInput}
+              type='hidden'
+              name='summary'
+              value={summary}
+              label=''
+            />
             <Select
               name='concrete-model'
               label='Марка бетона'
               onChange={handlers.handleConcreteModelChange}
+              required
             >
               {concreteEntries.map(({ fullname, value }) => (
                 <option key={value} value={value}>
@@ -69,18 +79,21 @@ export default function OrderConcrete() {
               value={state.volume}
               min={0}
               onChange={handlers.handleVolumeChange}
+              required
             />
             <Input
               type='text'
               name='name'
               label='Имя'
               placeholder='Введите имя'
+              required
             />
             <Input
               type='tel'
               name='phoneNumber'
               label='Телефон'
               placeholder='+7 (___) ___-__-__'
+              required
             />
             <Input
               wrapperClassName={styles.span_2}
@@ -88,14 +101,16 @@ export default function OrderConcrete() {
               name='delivery-adress'
               label='Адрес доставки'
               placeholder='ул. Пугачёва, д.45'
+              required
             />
             <Input
               wrapperClassName={styles.span_2}
               type='datetime-local'
               name='delivery-date'
               label='Дата'
+              required
             />
-            <Select name='entrance' label='Подъезд к территории'>
+            <Select name='entrance' label='Подъезд к территории' required>
               <option value='good'>Хороший</option>
               <option value='problematic'>Проблематичный</option>
             </Select>
@@ -104,12 +119,14 @@ export default function OrderConcrete() {
               name='gutter-length'
               label='Длина жёлоба, м'
               placeholder='3'
+              required
             />
             <Select
               className={styles.span_2}
               name='payment'
               label='Оплата'
               onChange={handlers.handlePaymentChange}
+              required
             >
               <option value='hard-cash'>Наличными</option>
               <option value='remittance'>Переводом</option>

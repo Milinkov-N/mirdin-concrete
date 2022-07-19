@@ -1,12 +1,13 @@
+import { PageSectionProps } from 'src/types'
 import { Section } from 'src/components/layout'
 import BodyRow from './BodyRow'
 import { concreteEntries } from 'src/consts'
 
 import styles from './PriceList.module.css'
 
-export default function PriceList() {
+export default function PriceList({ anchor }: PageSectionProps) {
   return (
-    <Section title='Прайс-лист'>
+    <Section title='Прайс-лист' id={anchor}>
       <div className={styles.tableWrapper}>
         <table className={styles.table}>
           <thead className={styles.tableHead}>

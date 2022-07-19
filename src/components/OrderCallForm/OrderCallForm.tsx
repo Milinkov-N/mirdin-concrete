@@ -43,12 +43,19 @@ export default function OrderCallForm({ isModal = false }: OrderCallProps) {
           value='Новый заявка на звонок на сайте concrete-mirdin.ru'
           label=''
         />
-        <Input type='text' name='name' label='Имя' placeholder='Введите имя' />
+        <Input
+          type='text'
+          name='name'
+          label='Имя'
+          placeholder='Введите имя'
+          required
+        />
         <Input
           type='tel'
           name='phoneNumber'
           label='Телефон'
           placeholder='+7 (___) ___-__-__'
+          required
         />
         <Button
           className={styles.submitBtn}

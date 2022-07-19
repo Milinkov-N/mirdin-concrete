@@ -13,7 +13,7 @@ export default function CallToAction() {
           <p className={styles.subtitle}>
             Коротко опишите ваш запрос и заполните все поля.
           </p>
-          <Button type='link' href='/' label='Оставить заявку' />
+          <Button type='link' href='#order-concrete' label='Оставить заявку' />
         </div>
         <div className={styles.image}>
           <Img src={Image.src} width={500} aspectRatio='187 / 134' />

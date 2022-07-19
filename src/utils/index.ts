@@ -26,3 +26,7 @@ export default function classNames(
 
   return classNames.join(' ').trim()
 }
+
+const scrollUp = (y = 0) => window.scrollTo({ top: y })
+
+export { scrollUp }

@@ -24,14 +24,14 @@ const Home: NextPage = () => {
       />
       <Hero />
       <Advantages />
-      <About />
-      <OrderCallModal />
+      <About anchor='about' />
       <WorkStages />
-      <OurOffers />
+      <OurOffers anchor='services' />
       <OurFacilities />
       <CallToAction />
-      <PriceList />
-      <OrderConcrete />
+      <PriceList anchor='price-list' />
+      <OrderConcrete anchor='order-concrete' />
+      <OrderCallModal />
     </Layout>
   )
 }

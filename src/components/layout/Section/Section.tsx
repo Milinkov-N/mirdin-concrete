@@ -10,6 +10,7 @@ interface SectionProps {
     section?: string
     container?: string
   }
+  id?: string
   title: string
   subtitle?: string
   alter?: boolean
@@ -18,6 +19,7 @@ interface SectionProps {
 
 export default function Section({
   classes,
+  id,
   title,
   subtitle,
   alter = false,
@@ -31,7 +33,7 @@ export default function Section({
   return (
     <section className={sectionClasses}>
       <Container className={classes?.container}>
-        <header className='section-header'>
+        <header className='section-header' id={id}>
           <Heading label={title} />
           {subtitle && <p className='section-subtitle'>{subtitle}</p>}
         </header>

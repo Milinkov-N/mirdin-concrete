@@ -1,4 +1,4 @@
-import React from 'react'
+import { PageSectionProps } from 'src/types'
 import Offer from './Offer'
 import { Section } from 'src/components/layout'
 import ImageOne from 'public/offer_img1.jpg'
@@ -41,9 +41,9 @@ const offers: IOffer[] = [
   },
 ]
 
-export default function OurOffers() {
+export default function OurOffers({ anchor }: PageSectionProps) {
   return (
-    <Section title='Что мы предлагаем'>
+    <Section title='Что мы предлагаем' id={anchor}>
       <div className={styles.offers}>
         {offers.map((offer, i) => (
           <Offer key={offer.title} alter={i % 2 !== 0} {...offer} />

@@ -3,22 +3,23 @@ import { FaBars } from 'react-icons/fa'
 import { useAppDispatch } from 'src/contexts/AppContext'
 import { PhoneNumbers, Logo, Button, Email, NavModal } from 'src/components'
 import { Container } from '../'
-import classNames from 'src/utils'
+import classNames, { scrollUp } from 'src/utils'
 
 import styles from './Header.module.css'
+import Link from 'next/link'
 
 export default function Header() {
+  const setOrderCallModalOpened = useAppDispatch()
   const [sticky, setSticky] = useState(false)
   const [navOpened, setNavOpened] = useState(false)
+
   const headerClasses = classNames(styles.wrapper, '', {
     [styles.wrapperSticky]: sticky,
   })
 
-  const setOrderCallModalOpened = useAppDispatch()
-
   const handleClick = () => setOrderCallModalOpened(true)
-
   const toggleSidebar = () => setNavOpened(isOpened => !isOpened)
+  const handleScrollUp = () => scrollUp()
 
   useEffect(() => {
     window.onscroll = () => {
@@ -37,16 +38,24 @@ export default function Header() {
         <nav className={styles.nav}>
           <ul className={styles.list}>
             <li className={styles.listItem}>
-              <a href='/'>Главная</a>
+              <Link href=''>
+                <a onClick={handleScrollUp}>Главная</a>
+              </Link>
             </li>
             <li className={styles.listItem}>
-              <a href='/'>О нас</a>
+              <Link href='#about'>
+                <a>О нас</a>
+              </Link>
             </li>
             <li className={styles.listItem}>
-              <a href='/'>Цены</a>
+              <Link href='#services'>
+                <a>Услуги</a>
+              </Link>
             </li>
             <li className={styles.listItem}>
-              <a href='/'>Контакты</a>
+              <Link href='#price-list'>
+                <a>Цены</a>
+              </Link>
             </li>
           </ul>
         </nav>

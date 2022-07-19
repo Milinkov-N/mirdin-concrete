@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ReactNode } from 'react'
 import classNames from 'src/utils'
 import styles from './Button.module.css'
@@ -37,9 +38,11 @@ export default function Button({
   switch (type) {
     case 'link':
       return (
-        <a className={btnClasses} href={href} onClick={onClick}>
-          {content}
-        </a>
+        <Link href={href}>
+          <a className={btnClasses} onClick={onClick}>
+            {content}
+          </a>
+        </Link>
       )
 
     case 'button':

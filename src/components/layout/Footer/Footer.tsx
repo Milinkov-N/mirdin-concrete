@@ -1,11 +1,16 @@
 import { IoIosArrowUp } from 'react-icons/io'
 import { Button, Email, Logo, PhoneNumbers } from 'src/components'
+import { useAppDispatch } from 'src/contexts/AppContext'
 import { Container } from '../'
+import { scrollUp } from 'src/utils'
 
 import styles from './Footer.module.css'
 
 export default function Footer() {
-  const scrollUp = () => window.scrollTo({ top: 0 })
+  const setOrderCallModalOpened = useAppDispatch()
+
+  const handleClick = () => setOrderCallModalOpened(true)
+  const handleScrollUp = () => scrollUp()
 
   return (
     <footer className={styles.wrapper}>
@@ -15,7 +20,11 @@ export default function Footer() {
           <div className={styles.contacts}>
             <Email />
             <PhoneNumbers />
-            <Button type='button' label='Заказать звонок' />
+            <Button
+              type='button'
+              label='Заказать звонок'
+              onClick={handleClick}
+            />
           </div>
         </Container>
       </div>
@@ -25,7 +34,7 @@ export default function Footer() {
             <span className='uppercase'>ооо “мирдин”</span>{' '}
             <span>- Все права защищены &copy; {new Date().getFullYear()}</span>
           </p>
-          <div className={styles.scrollUpBtn} onClick={scrollUp}>
+          <div className={styles.scrollUpBtn} onClick={handleScrollUp}>
             <span>Наверх</span>
             <div className={styles.scrollUpIcon}>
               <IoIosArrowUp />

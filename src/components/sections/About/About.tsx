@@ -1,3 +1,4 @@
+import { PageSectionProps } from 'src/types'
 import { Img, TextBlock } from 'src/components'
 import { Section } from 'src/components/layout'
 import classNames from 'src/utils'
@@ -5,10 +6,10 @@ import AboutImage from 'public/about.jpg'
 
 import styles from './About.module.css'
 
-export default function About() {
+export default function About({ anchor }: PageSectionProps) {
   const articleClasses = classNames(styles.gridItem, styles.content)
   return (
-    <Section title='О нас'>
+    <Section title='О нас' id={anchor}>
       <div className={styles.grid}>
         <div className={styles.gridItem}>
           <div className={styles.imageContainer}>
