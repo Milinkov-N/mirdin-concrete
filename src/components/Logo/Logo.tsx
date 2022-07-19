@@ -11,7 +11,7 @@ export default function Logo({ className = '', color = 'inherit' }: LogoProps) {
 
   return (
     <Link href='/'>
-      <a className={logoClasses}>ооо "мирдин"</a>
+      <a className={logoClasses}>ооо &quot;мирдин&quot;</a>
     </Link>
   )
 }
