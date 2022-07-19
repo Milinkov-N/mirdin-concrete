@@ -1,0 +1,107 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--clr-white);
+  padding: 25px 0;
+  margin-top: auto;
+}
+
+.topRow,
+.bottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.email {
+  font-weight: 300;
+}
+
+.copyright {
+  font-weight: 300;
+  color: var(--clr-neutral-600);
+}
+
+.scrollUpBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.scrollUpBtn span {
+  font-weight: 300;
+  color: var(--clr-neutral-600);
+  transition: 0.2s color ease;
+}
+
+.scrollUpBtn:hover span {
+  color: var(--clr-neutral-900);
+}
+
+.scrollUpIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: var(--clr-neutral-300);
+  border-radius: 6px;
+  transition: 0.2s background-color ease;
+}
+
+.scrollUpBtn:hover .scrollUpIcon {
+  background-color: var(--clr-neutral-400);
+}
+
+.scrollUpIcon svg {
+  transition: 0.2s all ease;
+}
+
+.scrollUpBtn:hover .scrollUpIcon svg {
+  transform: translateY(-3px);
+}
+
+@media screen and (max-width: 800px) {
+  .topRow,
+  .contacts {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .contacts {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .scrollUpBtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .bottomRow {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .scrollUpBtn {
+    position: static;
+    top: unset;
+    right: unset;
+    flex-direction: row-reverse;
+  }
+}

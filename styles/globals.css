@@ -1,9 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+
+:root {
+  --ff-primary: Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --ff-logo: 'Jura', sans-serif;
+
+  --clr-white: #fff;
+  --clr-black: #000;
+  --clr-primary: #e18c0d;
+
+  --clr-neutral-200: #f5f5f5;
+  --clr-neutral-300: #ededed;
+  --clr-neutral-400: #e0e0e0;
+  --clr-neutral-500: #c2c2c2;
+  --clr-neutral-600: #9e9e9e;
+  --clr-neutral-700: #757575;
+  --clr-neutral-800: #616161;
+  --clr-neutral-900: #616161;
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 600;
+  --fw-black: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--ff-primary);
+  scroll-behavior: smooth;
 }
 
 a {
@@ -11,6 +42,194 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1300px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.section-header {
+  font-size: 2.5rem;
+  margin-bottom: 2em;
+}
+
+.section-alter {
+  background-color: #f4f4f4;
+}
+
+.section-title {
+  position: relative;
+  font-size: inherit;
+  text-align: center;
+  margin-bottom: 0.875em;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 0.35em);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 4px;
+  background-color: var(--clr-primary);
+  border-radius: 5px;
+}
+
+.section-subtitle {
+  max-width: 335px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #818181;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--ff-logo);
+  font-size: 1.625rem;
+  text-transform: uppercase;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0 0 0 / 0.2);
+}
+
+.clr-inherit {
+  color: inherit;
+}
+
+.clr-black {
+  color: var(--clr-black);
+}
+
+.clr-white {
+  color: var(--clr-white);
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.cur-pointer {
+  cursor: pointer;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-normal {
+  font-weight: 400;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+.fw-black {
+  font-weight: 700;
+}
+
+.input-group input,
+.input-group .select-input {
+  display: block;
+  width: 100%;
+  background-color: var(--clr-white);
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid var(--clr-neutral-500);
+  border-radius: 4px;
+  padding: 0.875em;
+  margin-top: 0.5rem;
+  transition: 0.2s all ease;
+  outline: 0;
+}
+
+.input-group input::placeholder {
+  color: var(--clr-neutral-500);
+}
+
+.input-group input:hover,
+.input-group .select-input:hover {
+  border: 1px solid #267cfd;
+}
+
+.input-group input:focus,
+.input-group .select-input:focus {
+  border: 1px solid #267cfd;
+  box-shadow: 0 0 0 3px #c8deff;
+}
+
+.input-group select {
+  cursor: pointer;
+}
+
+.input-group .select-input {
+  padding: 0.875em 0;
+}
+
+.select-input select {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0 0.875em;
+  outline: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0 25px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .logo {
+    font-size: 1.375rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 0 15px;
+  }
 }

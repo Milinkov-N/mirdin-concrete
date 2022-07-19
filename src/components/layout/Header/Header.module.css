@@ -1,0 +1,83 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: var(--clr-white);
+  padding: 1.5rem 0;
+  transition: 0.2s all ease;
+  z-index: 9999;
+}
+
+.wrapperSticky {
+  background: var(--clr-white);
+  color: var(--clr-black);
+  padding: 0.875rem 0;
+  box-shadow: 0px 0px 17px rgba(0 0 0 / 0.05);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .list {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.listItem a {
+  padding: 0.5em 0.875em;
+  transition: 0.2s color ease;
+}
+
+.listItem a:hover {
+  color: var(--clr-primary);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  color: var(--clr-white);
+}
+
+.wrapperSticky .btn {
+  color: var(--clr-black);
+}
+
+.wrapperSticky .btn:hover {
+  color: var(--clr-white);
+}
+
+.menuToggleBtn {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1144px) {
+  .phoneNumbers,
+  .email {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .nav {
+    display: none;
+  }
+
+  .menuToggleBtn {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .btn {
+    display: none;
+  }
+}

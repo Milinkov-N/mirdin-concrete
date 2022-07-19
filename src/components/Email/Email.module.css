@@ -1,0 +1,40 @@
+.emailTooltip {
+  position: relative;
+}
+
+.email {
+  cursor: pointer;
+}
+
+.tooltip {
+  width: 140px;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.2s all ease;
+  pointer-events: none;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotateZ(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: var(--clr-black);
+}
+
+.tooltipClicked {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

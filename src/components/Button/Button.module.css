@@ -1,0 +1,24 @@
+.primary {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: solid 2px var(--clr-primary);
+  border-radius: 4px;
+  padding: 0.625em 1.25em;
+  transition: 0.2s color ease;
+  transition: 0.2s background-color ease;
+  cursor: pointer;
+}
+
+.primary:hover {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+@media screen and (max-width: 850px) {
+  .primary {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,150 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.description p {
+  margin-top: unset;
+}
+
+.clausesList li {
+  margin-bottom: 0.5em;
+}
+
+.formWrapper {
+  width: 517px;
+  background-color: var(--clr-white);
+  border-radius: 10px;
+  color: var(--clr-black);
+  padding: 1.25rem 1rem;
+  margin: 0 auto;
+}
+
+.title {
+  position: relative;
+  font-size: 1.625rem;
+  margin-bottom: 0.875em;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 2px;
+  background-color: var(--clr-primary);
+  border-radius: 5px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  font-weight: var(--fw-light);
+  padding: 0 1rem;
+}
+
+.title,
+.subtitle {
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.span_2 {
+  grid-column: span 2;
+}
+
+.summary {
+  font-size: 1.25rem;
+}
+
+.summary span {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  margin-left: 0.25em;
+}
+
+.submitBtn {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--clr-white);
+  background-color: var(--clr-primary);
+  border: solid 2px var(--clr-primary);
+  border-radius: 4px;
+  padding: 0.625em 1.25em;
+  transition: 0.2s color ease;
+  transition: 0.2s background-color ease;
+  margin-top: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.checkbox input[type='checkbox'] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-white);
+  border: 2px solid #9b9b9b;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+}
+
+.checkbox input[type='checkbox']:checked {
+  background-color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+}
+
+.checkbox input[type='checkbox']:after {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--clr-white);
+}
+
+.checkbox label {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .description p {
+    text-align: justify;
+  }
+
+  .formWrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .span_2 {
+    grid-column: span 1;
+  }
+}

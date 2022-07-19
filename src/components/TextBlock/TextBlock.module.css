@@ -1,0 +1,8 @@
+.title {
+  font-size: 1.75rem;
+  color: var(--clr-primary);
+}
+
+.content {
+  max-width: 500px;
+}

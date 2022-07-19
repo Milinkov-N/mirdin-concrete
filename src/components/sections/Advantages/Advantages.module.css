@@ -1,0 +1,36 @@
+.section {
+  position: relative;
+  margin-top: -100px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.card {
+  width: 258px;
+  height: 276px;
+  background: var(--clr-white);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0 0 0 / 0.05);
+  text-align: center;
+  padding: 1.75rem 1.25rem;
+}
+
+.cardIcon {
+  font-size: 65px;
+  color: var(--clr-primary);
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.cardSubtitle {
+  font-weight: var(--fw-light);
+}
